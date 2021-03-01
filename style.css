@@ -1,0 +1,73 @@
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+@keyframes Letterspacing {
+	0% {
+		letter-spacing: -5vw;
+	}
+	80% {
+		letter-spacing: 2vw;
+	}
+	100% {
+		letter-spacing: 1vw;
+	}
+}
+
+@keyframes Blur {
+	0% {
+		filter: blur(1vw);
+	}
+	100% {
+		filter: blur(0.2vw);
+	}
+}
+
+@keyframes Moving {
+	0% {
+		background-position-x: 100%;
+	}
+	100% {
+		background-position-x: 0%;
+	}
+}
+
+#wrapper {
+	width: 100vw;
+	height: 100vh;
+	background: #000;
+	filter: contrast(6);
+}
+
+#text {
+	display: block;
+	text-align: center;
+	color: white;
+	font-size: 10vw;
+	font-family: Arial black;
+	mix-blend-mode: difference;
+	background: linear-gradient(150deg, rgba(0, 255, 0, 1) 20%, rgba(0, 0, 255, 1) 50%, rgba(255, 0, 0, 1) 80%);
+	animation: Letterspacing 2s forwards cubic-bezier(1, 0, 0, 1);
+	white-space: nowrap;
+}
+
+#gradient {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(150deg, rgba(0, 255, 0, 1) 20%, rgba(0, 0, 255, 1) 50%, rgba(255, 0, 0, 1) 80%);
+	animation: Blur 2s infinite alternate cubic-bezier(1, 0, 0, 1);
+}
+
+#shine {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: linear-gradient(150deg, rgba(0, 0, 0, 0) 45%, rgba(200, 200, 200, 1) 50%, rgba(0, 0, 0, 0) 55%);
+	mix-blend-mode: color-dodge;
+	background-size: 200% 100%;
+	animation: Moving 2s infinite alternate cubic-bezier(1, 0, 0, 1);
+}
